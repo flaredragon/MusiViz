@@ -16,7 +16,7 @@
 body{
     font-family: Quicksand;
     font-size: 1rem;
-    background-image: url("https://www.dropbox.com/s/2ct0i6kc61vp0bh/wall.jpg?raw=1");
+    background-image: url("./assets/wall.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: repeat;
@@ -27,6 +27,14 @@ body{
     border-radius: 10px;
     float:left;
     margin: 10px;
+    height:420px;
+    width:50%;
+}
+
+@media (max-width: 850px) {
+  .aa{
+    width:100%;
+    }
 }
 
 .bottom-up-10 {
@@ -145,16 +153,16 @@ body{
   .neon {
     font-family: neon;
     color: #FB4264;
-    font-size: 3vw;
-    line-height: 3vw;
+    font-size: 40px;
+    line-height: 40px;
     text-shadow: 0 0 1vw #F40A35;
   }
   
   .flux {
     font-family: neon;
     color: #426DFB;
-    font-size: 3vw;
-    line-height: 3vw;
+    font-size: 40px;
+    line-height: 40px;
     text-shadow: 0 0 1vw #2356FF;
   }
   

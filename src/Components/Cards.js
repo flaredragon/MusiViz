@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import * as SpotifyWebApi from 'spotify-web-api-js';
+import Bar from './Graphs/Bar';
+
 let spotifyApi = new SpotifyWebApi();
 
 class Cards extends Component {
@@ -8,21 +10,53 @@ class Cards extends Component {
 		this.state = {
 			tracks:[],
 			loading:false,
+			danceability:[],
+			energy:[],
+			loudness:[],
+			tempo:[],
+			popularity:[],
+			acousticness:[],
+			speechiness:[],
+			names:[],
 		}	
 	}
-	async componentDidMount(){
+	async componentWillMount(){
 		this.setState({loading:true});
 		spotifyApi.setAccessToken(this.props.token);
-		var data = await spotifyApi.getMyTopTracks({limit:4,time_range:'long_term'})
+		let ids = [],names = [],danceability = [],energy = [],loudness = [],tempo = [],popularity = [],acousticness = [],speechiness = [];
+		var data = await spotifyApi
+						.getMyTopTracks({limit:4,time_range:'long_term'})
 						.then((data,err) => { 			
 								if (err) console.error(err);
 						  		else {
 						  			console.log('Artist albums', data);
 						  			return data.items;
 						  		}
-						});							
-		this.setState({tracks:data,loading:false});
-		console.log(this.state.tracks);
+						});
+		data.map((track) => {
+			ids.push(track.id);
+			popularity.push(track.popularity);
+			names.push(track.name);
+		}); 
+		var audioFeatures = await spotifyApi
+								  .getAudioFeaturesForTracks(ids)
+								  .then((data,err) => {
+										if (err) console.error(err);
+										else {
+											console.log('Artist albums', data);
+											return data.audio_features;
+										}
+								  });
+		audioFeatures.map((track) => {
+			danceability.push(track.danceability);
+			energy.push(track.energy);
+			loudness.push(track.loudness);
+			tempo.push(track.tempo);
+			acousticness.push(track.acousticness);
+			speechiness.push(track.speechiness);
+		});
+	await this.setState({tracks:data,names,danceability,energy,loudness,tempo,popularity,acousticness,speechiness,loading:false});
+		console.log(this.state);
 	}
 	
 	render() {
@@ -30,8 +64,8 @@ class Cards extends Component {
 			<div className="col-xs-6 col-sm-6 col-lg-3">
                         <div className="card fix-height">
                             <a className="img-card" href={track.external_urls.spotify}>
-                            <img src={track.album.images[0].url} />
-                          </a>
+                            	<img src={track.album.images[0].url} />
+                          	</a>
                             <div className="card-content">
                                 <h4 className="card-title">
                                     {track.name}
@@ -51,6 +85,7 @@ class Cards extends Component {
 		return(<div>Loading...</div>);
 		else {
 		return (
+		<React.Fragment>
 		<section className="wrapper">
     			<div className="container-fostrap">
     				<div className="content">
@@ -62,6 +97,8 @@ class Cards extends Component {
                 	</div>
                 </div>
          </section>
+         <Bar popularity={this.state.popularity} names={this.state.names}/>
+         </React.Fragment>
 		);
 	    }
 	}
