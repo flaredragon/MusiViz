@@ -8,11 +8,11 @@ class Home extends Component {
 	render() {
 		return (
 			<React.Fragment>
-				<a href="https://github.com/flaredragon/spotyoursong">
+				<a href="https://github.com/flaredragon/MusiViz">
 				<img className="github-icon" src={github} alt="Github Icon"/>
 				</a>
 				<div className="App-header">
-					<h1 className="heading-main">Spot Your Song</h1>
+					<h1 className="heading-main">Musi-Viz</h1>
 				</div>
 				<h3 className="text-main">An App to visualize and analyze your favourite songs</h3>
 				<div className="login-wrapper">

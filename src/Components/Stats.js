@@ -45,8 +45,8 @@ class About extends Component {
 			return (
 				<React.Fragment>
 					<div>
-						<span className="page-icon heading-main">Spot Your Song</span>
-						<a href="https://github.com/flaredragon/spotyoursong">
+						<span className="page-icon heading-main">Musi-Viz</span>
+						<a href="https://github.com/flaredragon/MusiViz">
 							<img className="github-icon" src={github} alt="Github Icon"/>
 						</a>				
 						{user}
