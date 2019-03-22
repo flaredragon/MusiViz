@@ -18,7 +18,7 @@ class Home extends Component {
 				<div className="login-wrapper">
 					<a
 						className="btn btn-success login-spotify"
-						href="http://localhost:4000/login"
+						href="https://stark-dawn-75160.herokuapp.com/login"
 						target="_self"
 						rel="noopener noreferrer">
 						<img src={spotify} className="spotify-icon" />
