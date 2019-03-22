@@ -28,7 +28,9 @@ class About extends Component {
         else {
 			return ( 
 				<React.Fragment>
-		   		<div>Haaha</div> 
+		   		<div className="nav">
+				<span className="page-icon heading-main">Spot Your Song</span>
+				</div> 
 		   		<Cards token={this.state.token}/>
 		   		</React.Fragment>
 		   	);

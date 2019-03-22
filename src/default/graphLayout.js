@@ -32,7 +32,14 @@ export var barData = {
     datasets: [
       {
         label: ['Popularity'],
-        backgroundColor: ['#FF0073','purple','#FF0073','purple'],
+        backgroundColor: '#FF0073',
+        borderColor: '#fff',
+        borderWidth: 3,
+        data: [65, 59, 80,90]
+      },
+      {
+        label: ['Positivity'],
+        backgroundColor: 'purple',
         borderColor: '#fff',
         borderWidth: 3,
         data: [65, 59, 80,90]
@@ -85,6 +92,29 @@ export var lineData = {
       pointHitRadius: 10,
       data: [65, 59, 80, 81, 56, 55, 40]
     }
+  ]
+};
 
+export const vBarData = {
+  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  datasets: [
+    {
+      label: 'Speechiness',
+      backgroundColor: 'rgba(255,99,132,0.2)',
+      borderColor: 'rgba(255,99,132,1)',
+      borderWidth: 1,
+      hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+      hoverBorderColor: 'rgba(255,99,132,1)',
+      data: [65, 59, 80, 81, 56, 55, 40]
+    },
+        {
+      label: 'Acousticness',
+      backgroundColor: 'rgba(255,99,132,0.2)',
+      borderColor: 'rgba(255,99,132,1)',
+      borderWidth: 1,
+      hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+      hoverBorderColor: 'rgba(255,99,132,1)',
+      data: [65, 59, 80, 81, 56, 55, 40]
+    },	
   ]
 };

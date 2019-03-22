@@ -6,11 +6,9 @@ import '../../index.css';
 
 class LineGraph extends Component{
   componentWillMount(){
-  		console.log(this.props.tempo[0]);
   		lineData.labels = this.props.names;
 		lineData.datasets[0].data = this.props.tempo;
 		lineData.datasets[1].data = this.props.energy;
-		console.log(lineData);
   }
 
   render() {

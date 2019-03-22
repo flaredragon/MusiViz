@@ -6,10 +6,8 @@ import '../../index.css';
 
 class Bar extends Component {
 	componentWillMount() {
-		console.log(this.props.danceability[0]);
 		doughnutData.labels = this.props.names;
 		doughnutData.datasets[0].data = this.props.danceability;
-		console.log(doughnutData);
 	}
 	render() {
 		return (

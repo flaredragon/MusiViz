@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { HorizontalBar } from 'react-chartjs-2';
-import { barData } from '../../default/graphLayout';
+import { Bar } from 'react-chartjs-2';
+import { vBarData } from '../../default/graphLayout';
 import Tilt from 'react-tilt';
 import '../../index.css';
 
-class Bar extends Component {
+class VerticalBar extends Component {
 	componentWillMount() {
-		barData.labels = this.props.names;
-		barData.datasets[0].data = this.props.popularity;
-		barData.datasets[1].data = this.props.valence;
+		vBarData.labels = this.props.names;
+		vBarData.datasets[0].data = this.props.speechiness;
+		vBarData.datasets[1].data = this.props.acousticness;
 	}
 	render() {
 		return (
@@ -17,11 +17,11 @@ class Bar extends Component {
 					<br />
 					<div className="Tilt-inner">
 						<div className="sign">
-							<span className="flux">Popularity</span>
+							<span className="flux">Taste</span>
 						</div>
 						<br></br>
 					</div>
-					<HorizontalBar data={barData} options={{
+					<Bar data={vBarData} options={{
 						scales: {
 							xAxes: [{
 								ticks: {
@@ -52,4 +52,4 @@ class Bar extends Component {
 	}
 };
 
-export default Bar
+export default VerticalBar

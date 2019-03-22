@@ -5,22 +5,15 @@
   "dependencies": {
     "axios": "^0.18.0",
     "chart.js": "^2.8.0",
-    "cookie-parser": "^1.4.4",
-    "cors": "^2.8.5",
     "dotenv": "^7.0.0",
-    "express": "^4.16.4",
-    "fs": "^0.0.1-security",
     "mkdirp": "^0.5.1",
-    "querystring": "^0.2.0",
     "react": "^16.8.4",
     "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.8.4",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "react-tilt": "^0.1.4",
-    "request": "^2.88.0",
-    "spotify-web-api-js": "^1.2.0",
-    "spotify-web-api-node": "^4.0.0"
+    "spotify-web-api-js": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
