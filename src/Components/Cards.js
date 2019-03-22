@@ -38,7 +38,7 @@ class Cards extends Component {
 					return data.items;
 				}
 			});
-		data.map((track) => {
+		data.forEach((track) => {
 			ids.push(track.id);
 			popularity.push(track.popularity);
 			names.push(track.name);
@@ -51,7 +51,7 @@ class Cards extends Component {
 					return data.audio_features;
 				}
 			});
-		audioFeatures.map((track) => {
+		audioFeatures.forEach((track) => {
 			danceability.push(track.danceability);
 			energy.push(track.energy * 170);
 			loudness.push(track.loudness);
@@ -69,7 +69,7 @@ class Cards extends Component {
 			<div className="col-xs-6 col-sm-6 col-lg-3">
 				<div className="card fix-height">
 					<a className="img-card" href={track.external_urls.spotify}>
-						<img src={track.album.images[0].url} />
+						<img src={track.album.images[0].url} alt="icon"/>
 					</a>
 					<div className="card-content">
 						<h4 className="card-title">

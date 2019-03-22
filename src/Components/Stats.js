@@ -35,7 +35,7 @@ class About extends Component {
 	}
 
 	render() {
-		const user = (this.state.user ? <div className="user-wrapper"><img className="profile-small-img" src={this.state.user.images[0].url} /><a href={this.state.user.external_urls.spotify}>{this.state.user.display_name}</a></div> : null);
+		const user = (this.state.user ? <div className="user-wrapper"><img className="profile-small-img" src={this.state.user.images[0].url} alt="icon"/><a href={this.state.user.external_urls.spotify}>{this.state.user.display_name}</a></div> : null);
 		if (!this.state.token)
 			return (
 				<div>No Token Found :P</div>

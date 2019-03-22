@@ -21,7 +21,7 @@ class Home extends Component {
 						href="https://stark-dawn-75160.herokuapp.com/login"
 						target="_self"
 						rel="noopener noreferrer">
-						<img src={spotify} className="spotify-icon" />
+						<img src={spotify} className="spotify-icon" alt="icon" />
 						Login With Spotify
 		 			</a>
 				</div>
