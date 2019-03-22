@@ -6,6 +6,9 @@
 [![GitLicense](https://gitlicense.com/badge/flaredragon/MusiViz)](https://github.com/flaredragon/MusiViz)
 
 Served at - [Musi-Viz](http://musiviz.surge.sh)
+
+![ScreenShot](http://i.imgur.com/FMcbv6X.jpg)
+
 ## Quick Start
 ``` bash
 # Install dependencies
