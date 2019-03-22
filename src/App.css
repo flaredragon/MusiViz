@@ -3,7 +3,9 @@
 }
 
 .App-header {
-	min-height: 70vh;
+	min-height: 50vh;
+	width:100%;
+	margin:0;
 	font-family: Quicksand;
 	display: flex;
 	text-align: center;
