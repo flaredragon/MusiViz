@@ -17,7 +17,8 @@ class Bar extends Component {
 						<br></br>
 						<div className="sign">
 							<span className="neon">Danceability</span>
-						</div><br></br>
+						</div>
+						<br></br>
 						<Doughnut data={doughnutData} /></div>
 				</Tilt>
 			</React.Fragment>

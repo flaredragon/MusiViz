@@ -22,14 +22,14 @@ class Cards extends Component {
 			acousticness: [],
 			speechiness: [],
 			names: [],
-			instrumentalness:[],
-                        valence:[],
+			instrumentalness: [],
+			valence: [],
 		}
 	}
 	async componentWillMount() {
 		this.setState({ loading: true });
 		spotifyApi.setAccessToken(this.props.token);
-		let ids = [], names = [], danceability = [], energy = [], loudness = [], tempo = [], popularity = [], acousticness = [], speechiness = [],instrumentalness=[],valence=[];
+		let ids = [], names = [], danceability = [], energy = [], loudness = [], tempo = [], popularity = [], acousticness = [], speechiness = [], instrumentalness = [], valence = [];
 		var data = await spotifyApi
 			.getMyTopTracks({ limit: 4, time_range: 'long_term' })
 			.then((data, err) => {
@@ -56,10 +56,10 @@ class Cards extends Component {
 			energy.push(track.energy * 170);
 			loudness.push(track.loudness);
 			tempo.push(track.tempo);
-  			valence.push(track.valence*100);
-			acousticness.push(track.acousticness*1000);
-			speechiness.push(track.speechiness*1000);
-			instrumentalness.push(track.instrumentalness*1000);
+			valence.push(track.valence * 100);
+			acousticness.push(track.acousticness * 1000);
+			speechiness.push(track.speechiness * 1000);
+			instrumentalness.push(track.instrumentalness * 1000);
 		});
 		await this.setState({ tracks: data, names, danceability, energy, loudness, tempo, popularity, acousticness, speechiness, instrumentalness, valence, loading: false });
 	}
@@ -79,9 +79,9 @@ class Cards extends Component {
 							{track.album.name}
 						</p>
 					</div>
-					<button className="btn btn-outline-light bottom-up-10" href={track.external_urls.spotify}>
+					<a className="btn btn-outline-light bottom-up-10" href={track.external_urls.spotify}>
 						Listen to the Song
-                                </button>
+                                </a>
 				</div>
 			</div>
 
