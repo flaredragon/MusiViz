@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Cards from './Cards.js'
+import CardsWrapper from './CardsWrapper.js'
 import github from '../assets/github-32.png';
 import * as SpotifyWebApi from 'spotify-web-api-js';
 
@@ -51,7 +51,7 @@ class About extends Component {
 						</a>				
 						{user}
 					</div>
-					<Cards token={this.state.token} />
+					<CardsWrapper token={this.state.token} />
 				</React.Fragment>
 			);
 		}
