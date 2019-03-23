@@ -14,6 +14,15 @@
 	border-radius:50%;
 }
 
+.center {
+	align:center;
+}
+
+.star-github {
+	margin:20px;
+
+}
+
 .no-songs {
 	font-size:30px;
 	font-family:Quicksand;

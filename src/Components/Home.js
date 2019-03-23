@@ -8,6 +8,7 @@ class Home extends Component {
 	render() {
 		return (
 			<React.Fragment>
+				<iframe title="github-star" className="center star-github" src="https://ghbtns.com/github-btn.html?user=flaredragon&repo=MusiViz&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
 				<a href="https://github.com/flaredragon/MusiViz">
 				<img className="github-icon" src={github} alt="Github Icon"/>
 				</a>
