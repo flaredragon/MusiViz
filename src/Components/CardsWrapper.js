@@ -34,11 +34,13 @@ class CardsWrapper extends Component {
 		var data = await spotifyApi
 			.getMyTopTracks({ limit: 4, time_range: 'long_term' })
 			.then((data, err) => {
+				console.log(data);
 				if (err) console.error(err);
 				else {
 					return data.items;
 				}
 			});
+		if(data.length>0) {
 		data.forEach((track) => {
 			ids.push(track.id);
 			popularity.push(track.popularity);
@@ -47,6 +49,7 @@ class CardsWrapper extends Component {
 		var audioFeatures = await spotifyApi
 			.getAudioFeaturesForTracks(ids)
 			.then((data, err) => {
+				console.log(data);
 				if (err) console.error(err);
 				else {
 					return data.audio_features;
@@ -62,13 +65,14 @@ class CardsWrapper extends Component {
 			speechiness.push(track.speechiness * 1000);
 			instrumentalness.push(track.instrumentalness * 1000);
 		});
+		}
 		await this.setState({ tracks: data, names, danceability, energy, loudness, tempo, popularity, acousticness, speechiness, instrumentalness, valence, loading: false });
 	}
 
 	render() {
 		if (this.state.loading)
 			return (<div className="loaders"><div className="spinner"></div></div>);
-		else {
+		else if(this.state.tracks.length>0){
 			return (
 				<React.Fragment>
 					<Cards tracks={this.state.tracks}/>
@@ -79,7 +83,8 @@ class CardsWrapper extends Component {
 				</React.Fragment>
 			);
 		}
-	}
+		else return(<div className="loaders no-songs">Start Listening Songs on Spotify Today!</div>);
+		}
 }
 
 export default CardsWrapper;

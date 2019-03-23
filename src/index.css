@@ -14,6 +14,13 @@
 	border-radius:50%;
 }
 
+.no-songs {
+	font-size:30px;
+	font-family:Quicksand;
+        color:#fff;
+
+}
+
 .heading-main {
 	color: #fff;
 	font-size: calc(10vw + 30px);

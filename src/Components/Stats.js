@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CardsWrapper from './CardsWrapper.js'
 import github from '../assets/github-32.png';
+import usericon from '../assets/user.png';
 import * as SpotifyWebApi from 'spotify-web-api-js';
 
 let spotifyApi = new SpotifyWebApi();
@@ -26,7 +27,6 @@ class About extends Component {
 				.then((data, err) => {
 					if (err) console.error(err);
 					else {
-						console.log(data);
 						return data;
 					}
 				});
@@ -35,7 +35,7 @@ class About extends Component {
 	}
 
 	render() {
-		const user = (this.state.user ? <div className="user-wrapper"><img className="profile-small-img" src={this.state.user.images[0].url} alt="icon"/><a href={this.state.user.external_urls.spotify}>{this.state.user.display_name}</a></div> : null);
+		const user = (this.state.user ? <div className="user-wrapper"><img className="profile-small-img" src={(this.state.user.images.length>0 ? this.state.user.images[0].url:usericon)} alt="icon"/><a href={this.state.user.external_urls.spotify}>{this.state.user.display_name}</a></div> : null);
 		if (!this.state.token)
 			return (
 				<div>No Token Found :P</div>
