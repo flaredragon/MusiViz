@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "chart.js": "^2.8.0",
     "dotenv": "^7.0.0",
     "mkdirp": "^0.5.1",
